@@ -35,7 +35,6 @@ namespace Hikaria.ToolPlacementIndicatorPlus
             if (CurrentLineRenderer == null)
             {
                 CurrentLineRenderer = AssetsHelper.GetLineRenderer();
-                //CurrentLineRenderer.SetColors(LineColor, LineColor);
             }
         }
 
@@ -44,13 +43,11 @@ namespace Hikaria.ToolPlacementIndicatorPlus
         {
             if (!AssetsHelper.Initialized)
                 return;
+            if (CurrentLineRenderer == null)
+                return;
             CurrentLineRenderer.gameObject.SetActive(false);
-            //if (CurrentLineRenderer != null)
-            //    GameObject.Destroy(CurrentLineRenderer);
         }
 
         private static LineRenderer CurrentLineRenderer;
-
-        //private static readonly Color LineColor = new(0.5f, 0.5f, 0f, 0.3f);
     }
 }
